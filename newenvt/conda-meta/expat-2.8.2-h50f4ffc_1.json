@@ -1,0 +1,51 @@
+{
+  "build": "h50f4ffc_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-arm64",
+  "constrains": [],
+  "depends": [
+    "__osx >=12.1",
+    "libcxx >=20",
+    "libexpat 2.8.2 h50f4ffc_1"
+  ],
+  "extracted_package_dir": "/opt/anaconda3/pkgs/expat-2.8.2-h50f4ffc_1",
+  "files": [
+    "bin/xmlwf",
+    "share/man/man1/xmlwf.1"
+  ],
+  "fn": "expat-2.8.2-h50f4ffc_1.conda",
+  "license": "MIT",
+  "link": {
+    "source": "/opt/anaconda3/pkgs/expat-2.8.2-h50f4ffc_1",
+    "type": 1
+  },
+  "md5": "f64813eedef2d37de315ff9ee588b7f0",
+  "name": "expat",
+  "package_tarball_full_path": "/opt/anaconda3/pkgs/expat-2.8.2-h50f4ffc_1.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/xmlwf",
+        "path_type": "hardlink",
+        "sha256": "e1c41d5b0b7c78799d202aa213ddfa819c9f09b3e2e1b59e22a319e73c5e9b82",
+        "sha256_in_prefix": "e1c41d5b0b7c78799d202aa213ddfa819c9f09b3e2e1b59e22a319e73c5e9b82",
+        "size_in_bytes": 91168
+      },
+      {
+        "_path": "share/man/man1/xmlwf.1",
+        "path_type": "hardlink",
+        "sha256": "aed8b16363d75877921cfcedc263a45f4b9b50b039bbb235f9748d0d161bd1f7",
+        "sha256_in_prefix": "aed8b16363d75877921cfcedc263a45f4b9b50b039bbb235f9748d0d161bd1f7",
+        "size_in_bytes": 11511
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "bfbe7a67bc518e9360990033ac5d6aec763df6084bfb3a6168e1b77399b22f39",
+  "size": 21414,
+  "subdir": "osx-arm64",
+  "timestamp": 1782817544000,
+  "url": "https://repo.anaconda.com/pkgs/main/osx-arm64/expat-2.8.2-h50f4ffc_1.conda",
+  "version": "2.8.2"
+}
