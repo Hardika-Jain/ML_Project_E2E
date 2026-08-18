@@ -1,4 +1,5 @@
-''' this will have list all librarires that are required for the project and will be used to install them in the virtual environment'''
-
 numpy
 pandas
+scikit-learn
+matplotlib
+seaborn
