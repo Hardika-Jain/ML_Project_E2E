@@ -4,6 +4,7 @@ from src.ML_Project_Hardika.exception import CustomException
 from src.ML_Project_Hardika.components.data_ingestion import DataIngestion
 from src.ML_Project_Hardika.components.data_ingestion import DataIngestionConfig
 
+
 if __name__ == "__main__":
     logging.info("Starting the application...")
 

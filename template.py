@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 project_name = "ML_Project_Hardika"
 
 list_of_files = [
-    ".github/workflows/.gitkeep",
+    ".github/workflows/.gitkeep", 
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py", #creating a package for components folder which will have files for data preprocessing,etc
     f"src/{project_name}/components/data_ingestion.py",

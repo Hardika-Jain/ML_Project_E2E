@@ -1,4 +1,4 @@
-'''Reading the requirements.txt file and returning the list of requirements'''
+'''The setup file is used for reading the requirements.txt file and returning the list of requirements.'''
 
 from setuptools import setup, find_packages
 from typing import List
@@ -19,3 +19,5 @@ setup(
     packages=find_packages(),
     install_requires= get_requirements('requirements.txt')
 )
+
+'''Upon running the setup.py file, the ML_Project_Hardika.egg.info is created along with the build and dist files too.'''

@@ -1,10 +1,12 @@
 #This is the data ingestion component which will read the data from the csv file and split it into train and test datasets.
+
 import os
 import sys
 from src.ML_Project_Hardika.logger import logging
 from src.ML_Project_Hardika.exception import CustomException
 import pandas as pd
 import glob
+import kagglehub
 from sklearn.model_selection import GroupShuffleSplit
 
 from dataclasses import dataclass
@@ -23,28 +25,30 @@ class DataIngestionConfig:
     test_data_path: str = os.path.join('artifacts', 'test.csv')
     # path where the testing split will be saved in the artifacts folder I created
 
-
 class DataIngestion:
     def __init__(self):
         self.ingestion_config = DataIngestionConfig()
         # creates an instance of the config class so we can access the paths above via self.ingestion_config
-
-        self.folder = "/Users/hardikajain/Downloads/ML_project_dataset"
-        # folder on disk where your raw CSV files live
 
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion component")
         # writes a log entry so we know this step started when running the pipeline
 
         try:
-            #code to read the data from the csv file and split it into train and test datasets
+            dataset_path = kagglehub.dataset_download("nadyinky/sephora-products-and-skincare-reviews")
+            # downloads the dataset from Kaggle (or uses the cached copy if already downloaded before)
+            # returns the local folder path on your computer where the files were saved
+
+            logging.info(f"Kaggle dataset downloaded to: {dataset_path}")
+            # logs the exact folder path, useful if you ever need to manually check the files
+
             # DATASET 1 - Sephora
 
-            product_info = pd.read_csv(os.path.join(self.folder, "product_info.csv"))
-            # reads the product_info.csv file into a DataFrame
+            product_info = pd.read_csv(os.path.join(dataset_path, "product_info.csv"))
+            # reads the product_info.csv file into a DataFrame, from the Kaggle download folder
 
-            review_files = glob.glob(os.path.join(self.folder, "reviews_*.csv"))
-            # finds every file in the folder whose name starts with "reviews_" (there are 5 of them)
+            review_files = glob.glob(os.path.join(dataset_path, "reviews_*.csv"))
+            # finds every file in that folder whose name starts with "reviews_" (there are 5 of them)
 
             reviews = pd.concat([pd.read_csv(f) for f in review_files], ignore_index=True)
             # reads each of those 5 files into a DataFrame, then stacks them into one combined DataFrame
@@ -68,7 +72,6 @@ class DataIngestion:
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
             # creates the 'artifacts' folder if it doesn't already exist
-            #all the data stroed in the dataframe will be stored in the train data path.
             # exist_ok=True means it won't throw an error if the folder is already there
 
             merged_data.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)
