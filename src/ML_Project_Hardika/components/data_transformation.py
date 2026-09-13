@@ -44,7 +44,7 @@ class DataTransformation:
                 'is_recommended'
             ]
             df = df[[c for c in columns_to_keep if c in df.columns]]
-            
+
 #Handeling missing values and duplicates
             # 4b. Drop rows with a missing label — is_recommended is what we're
             #     predicting, so we can't guess it or impute it
@@ -200,3 +200,10 @@ if __name__ == "__main__":
     # this only executes when the file is run directly, not when it's imported elsewhere
     transformation_obj = DataTransformation()
     transformation_obj.initiate_data_transformation(train_path, test_path)
+
+
+#final outcomes of the data transformation step:
+#X_train, X_test — DataFrames of numeric features (price_usd_scaled, skin_tone_encoded, one-hot skin_type columns, brand_freq_encoded) 
+# — this is what you train/test the model on.
+#y_train, y_test — Series of the is_recommended label (0/1).
+#preprocessor_path — "artifacts/preprocessor.pkl", the saved fitted transformers (not used for training, just for applying the same encoding to new data later).

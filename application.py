@@ -33,9 +33,3 @@ if __name__ == "__main__":
         logging.info("Custom Exception occurred")
         raise CustomException(e, sys)
 
-
-#final outcomes of the data transformation step:
-#X_train, X_test — DataFrames of numeric features (price_usd_scaled, skin_tone_encoded, one-hot skin_type columns, brand_freq_encoded) 
-# — this is what you train/test the model on.
-#y_train, y_test — Series of the is_recommended label (0/1).
-#preprocessor_path — "artifacts/preprocessor.pkl", the saved fitted transformers (not used for training, just for applying the same encoding to new data later).
