@@ -4,3 +4,10 @@ scikit-learn
 matplotlib
 seaborn
 kagglehub
+catboost
+xgboost
+scipy
+joblib
+plotly
+pyyaml
+joblib

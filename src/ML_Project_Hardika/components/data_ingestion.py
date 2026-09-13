@@ -69,7 +69,7 @@ class DataIngestion:
 
             logging.info(f"Merged dataset shape: {merged_data.shape}")
             # logs the row/column count of the merged dataset, useful for sanity-checking later
-
+            print(merged_data.columns.tolist())
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
             # creates the 'artifacts' folder if it doesn't already exist
             # exist_ok=True means it won't throw an error if the folder is already there
@@ -123,3 +123,9 @@ if __name__ == "__main__":
     obj.initiate_data_ingestion()
     # runs the ingestion process — this only executes when the file is run directly,
     # not when it's imported into another script (e.g. main.py)
+
+
+    
+#So the final variables are two file path strings, not dataframes:
+#train_data_path → "artifacts/train.csv"
+#test_data_path → "artifacts/test.csv"
