@@ -1,3 +1,5 @@
+import os
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 from src.ML_Project_Hardika.logger import logging
 import sys
 from src.ML_Project_Hardika.exception import CustomException

@@ -33,7 +33,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, models: dict, param: dict) 
     """
     try:
         report = {}
-
+        best_params_per_model = {}
         for model_name, model in models.items():
             # look up this model's hyperparameter grid, defined in model_trainer.py
             para = param[model_name]
@@ -60,8 +60,9 @@ def evaluate_model(X_train, y_train, X_test, y_test, models: dict, param: dict) 
             test_model_score = accuracy_score(y_test, y_test_pred)
 
             report[model_name] = test_model_score
+            best_params_per_model[model_name] = gs.best_params_
 
-        return report
+        return report, best_params_per_model
 
     except Exception as e:
         raise CustomException(e, sys)
