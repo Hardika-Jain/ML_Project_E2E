@@ -124,3 +124,8 @@ if __name__ == "__main__":
     # runs the ingestion process — this only executes when the file is run directly,
     # not when it's imported into another script (e.g. main.py)
 
+
+    
+#So the final variables are two file path strings, not dataframes:
+#train_data_path → "artifacts/train.csv"
+#test_data_path → "artifacts/test.csv"

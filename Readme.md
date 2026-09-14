@@ -29,7 +29,7 @@ Step 6 > Create the application.py file to call these functions of logging and e
 Step 7 > In the components folder that was created in the template file, code the data ingestion pipeline in the data_ingestion.py file. This is the data ingestion component which will read the data from kaggle and split it into train and test datasets, that will be stored in the newly created artifacts folder as raw, train, and text files.
 Step 8 > In the same way, create the data transformation .py file for EDA and feature scaling + encoding
 Step 9 > To run step 8, we need changes to be made in Utils.py and application.py
-Step 10 > 
+Step 10 >  
 
 
 
