@@ -63,7 +63,7 @@ class DataTransformation:
 
             # 4f. Drop more targeted duplicates — same product_id + same
             #     recommendation value, which is likely the same entry twice
-            df = df.drop_duplicates(subset=['product_id', 'is_recommended'], keep='first')
+            #df = df.drop_duplicates(subset=['product_id', 'is_recommended'], keep='first')
 
             # 4g. Normalize brand name text — strip whitespace, lowercase,
             #     so "Laneige" and "laneige " aren't treated as different brands
